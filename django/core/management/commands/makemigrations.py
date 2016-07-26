@@ -95,6 +95,8 @@ class Command(BaseCommand):
 
         # Raise an error if any migrations are applied before their dependencies.
         for db in connections:
+            if connections[db].features.empty:
+                continue
             loader.check_consistent_history(connections[db])
 
         # Before anything else, see if there's conflicting apps and drop out

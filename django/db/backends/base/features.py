@@ -225,6 +225,9 @@ class BaseDatabaseFeatures(object):
     # be equal?
     ignores_quoted_identifier_case = False
 
+    # Is this a deliberately empty default database?
+    empty = False
+
     def __init__(self, connection):
         self.connection = connection
 

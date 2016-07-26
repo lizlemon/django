@@ -357,5 +357,5 @@ class EmptyDefaultDatabaseTest(unittest.TestCase):
         """
         testcases.connections = db.ConnectionHandler({'default': {}})
         connection = testcases.connections[db.utils.DEFAULT_DB_ALIAS]
-        self.assertEqual(connection.settings_dict['ENGINE'], 'django.db.backends.dummy')
+        self.assertEqual(connection.settings_dict['ENGINE'], 'django.db.backends.empty')
         connections_support_transactions()
